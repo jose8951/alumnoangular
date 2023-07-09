@@ -1,0 +1,13 @@
+
+<p>*** {{titulo}} ***</p>
+
+<div class="form-group">
+    <br>
+    <label class="m-2" for="idnum">Numero: </label>
+    <input class="m-2" type="number" id="idnum" [(ngModel)]="numusuario">
+    <button class="btn btn-primary m-4" (click)="comprobarIntento()"> Probar</button>
+   <button *ngIf="finpartida" class="btn btn-primary my-5" (click)="reset()">Volver</button>
+</div>
+
+
+

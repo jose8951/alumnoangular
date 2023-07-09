@@ -1,0 +1,85 @@
+{{ titulo }}
+<br />
+<div class="form-check">
+  <input
+    class="form-check-input"
+    value="sin"
+    type="radio"
+    name="prefijo"
+    id="sin"
+    checked
+  />
+  <label class="form-check-label" for="sin">Sin letra (dni español)</label>
+</div>
+<div class="form-check">
+  <input
+    class="form-check-input"
+    value="0"
+    type="radio"
+    name="prefijo"
+    id="X"
+  />
+  <label class="form-check-label" for="X">X</label>
+</div>
+<div class="form-check">
+  <input
+    class="form-check-input"
+    value="1"
+    type="radio"
+    name="prefijo"
+    id="Y"
+  />
+  <label class="form-check-label" for="y">Y</label>
+</div>
+<div class="form-check">
+  <input
+    class="form-check-input"
+    value="2"
+    type="radio"
+    name="prefijo"
+    id="Z"
+  />
+  <label class="form-check-label" for="z">Z</label>
+</div>
+
+<div class="input-group">
+  <span class="input-group-text" id="basic-addon1">DNI</span>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Meta su dni"
+    [(ngModel)]="dni"
+  />
+  <button class="btn btn-primary" (click)="calcularLetra()">
+    Calcular Letra
+  </button>
+</div>
+
+<div class="container-fluid">
+  <span *ngIf="letra != ''">Su letra es {{ letra }}</span>
+  <div *ngIf="listaDnis.length > 0">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">PREFIJO</th>
+          <th scope="col">NUMERO</th>
+          <th scope="col">LETRA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dniaux of listaDnis">
+          <td>{{ dniaux.prefijo }}</td>
+          <td>{{ dniaux.numero }}</td>
+          <td>{{ dniaux.letra }}</td>
+        </tr>
+        <!--aquí tengo que mostrar mi lista d dnis :)-->
+      </tbody>
+    </table>
+    <button class="btn btn-primary m-2" (click)="ordenarPorNumero()">
+      Ordenar por numero
+    </button>
+    <button class="btn btn-primary" (click)="ordenarPorLetra()">
+      Ordenar por letra
+    </button>
+  </div>
+</div>

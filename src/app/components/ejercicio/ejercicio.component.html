@@ -1,0 +1,23 @@
+<p>ejercicio works!</p>
+
+
+
+
+<div class="form-group">
+    <br>
+    <label class="m-2" for="idnum">introduce cadena: </label>
+    <input class="m-2" type="text" id="idnum" [(ngModel)]="cadena">
+    <button class="btn btn-primary m-4" (click)="comprobarIntento()"> Probar</button>
+  <label *ngIf="par" > Es par</label>
+  <label *ngIf="impar" > Es impar</label>
+ 
+  <p>{{reves}} </p>
+  <p>Longitud: {{cadena.length}} </p>  
+</div>
+
+
+
+
+
+
+

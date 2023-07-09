@@ -1,0 +1,78 @@
+<div class="titulo">
+  <h3>{{ titulo }}</h3>
+</div>
+
+<form class="row g-3">
+  <div class="col-md-5">
+    <label for="entradaPeso" class="form-label">Peso</label>
+    <input
+      type="number"
+      value="dame valor"
+      class="form-control"
+      id="entradaPeso"
+      placeholder="Peso (ejemplo: 90,5)"
+      name="controlimc"
+      [(ngModel)]="valorPeso"
+    />
+  </div>
+
+  <div class="col-md-5">
+    <label for="entradaAltura" class="form-label">Altura</label>
+    <input
+      type="number"
+      class="form-control"
+      id="entradaAltura"
+      placeholder="Altura (ejemplo: 1,71)"
+      name="controlimc"
+      [(ngModel)]="valorAltura"
+    />
+  </div>
+
+  <div class="col-md-2">
+    <label for="inputBoton" class="form-label">Calculo Imc</label>
+    <button
+      type="button"
+      class="btn btn-primary form-control"
+      id="inputBoton"
+      (click)="calcularImc()"
+    >
+      Calcular
+    </button>
+  </div>
+</form>
+
+<div class="container col-8 p-5">
+  
+  <div *ngIf="listaImc.length > 0">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">PESO</th>
+          <th scope="col">ALTURA</th>
+          <th scope="col">IMC</th>
+          <th scope="col">ESTADO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let imcaux of listaImc">
+          <td>{{ imcaux.peso }}</td>
+          <td>{{ imcaux.altura }}</td>
+          <td>{{ imcaux.resultadoImc }}</td>
+          <td>{{ imcaux.comoEstas }}</td>
+        </tr>
+       
+      </tbody>
+    </table>
+    <div class="ordenar p-2">
+      <button class="btn btn-primary m-1" (click)="ordenarPorPeso()">
+        Ordenar por peso
+      </button>
+      <button class="btn btn-primary m-1" (click)="ordenarPorImc()">
+        Ordenar por INC
+      </button>
+      <button class="btn btn-primary m-1" (click)="ordenarEstado()">
+        Ordenar por estado
+      </button>
+    </div>
+  </div>
+</div>

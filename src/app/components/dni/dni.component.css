@@ -1,0 +1,9 @@
+.container-fluid {
+   width: 50%;
+    
+  }
+
+
+  table {
+   table-layout: fixed;
+ }
