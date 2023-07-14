@@ -1,0 +1,38 @@
+<div class="titulo_restaurante">
+<p>{{titulo}}<p>
+</div>
+
+<button class="btn btn-success" routerLink="/restaurantes/nuevo">CREAR</button>
+
+
+<div  *ngIf="lista_restaurantes.length>0">
+  <div class="row contiene" >
+    <div class="col-12 col-md-6 col-lg-3 prueba"  *ngFor="let aux of lista_restaurantes">
+      <div class="card">
+        <img src={{aux.fichaGoogle}} alt="Imagen" class="card-img-top" />
+        <div class="card-body darmargenes">
+          <h5 class="card-title">{{aux.nombre}}</h5>
+          <p class="card-text">Zona Barrio: {{aux.barrio}}</p>
+          <div>
+            <p id="titulo_especialidad">Especialidades:</p>
+            <p class="card-text"> {{aux.especialidad1}}, {{aux.especialidad2}}, {{aux.especialidad3}}</p>
+          </div>         
+          <p class="card-text">lorem ipsum dolor sit amet, consectet lorem ipsum dolor sit amet, consectet</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">         
+            <div class="d-flex">
+            
+              <button class="btn btn-warning" (click)="borrarRegistro(aux.id)">Delete</button>
+              <button class="btn btn-primary" (click)="updateRegistro(aux.id)">Update</button>
+            </div>         
+
+          <!--  <a class="nav-link" routerLink="/chuck">Ver ...</a>           -->
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+
+
+

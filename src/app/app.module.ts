@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { EjercicioComponent } from './components/ejercicio/ejercicio.component';
 import { ImcComponent } from './components/imc/imc.component';
+import { ChuckComponent } from './components/chuck/chuck.component';
+import { CdTimerModule } from 'angular-cd-timer';
+import { RestaurantesComponent } from './components/restaurantes/restaurantes.component';
+import { FormularioRestauranteComponent } from './components/formulario-restaurante/formulario-restaurante.component';
 
 
 @NgModule({
@@ -19,7 +23,12 @@ import { ImcComponent } from './components/imc/imc.component';
     DniComponent,
     PerroComponent,
     EjercicioComponent,
-    ImcComponent
+    ImcComponent,
+    ChuckComponent,
+    RestaurantesComponent,
+    FormularioRestauranteComponent
+    
+
   ],
 
   
@@ -27,7 +36,8 @@ import { ImcComponent } from './components/imc/imc.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CdTimerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -55,3 +55,7 @@ linea 94
             ]
 
 ## pagina github del profe https://github.com/valexx55
+
+
+##D:\cursoangular\pruebas>ng g c components/heroes
+##D:\cursoangular\pruebas>ng g service services/heroes
